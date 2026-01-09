@@ -1,10 +1,10 @@
 /*
- * Vencord, a Discord client mod
+ * CometCord, a Discord client mod
  * Copyright (c) 2025 Vendicated, Nuckyz and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import { Module, ModuleExports, WebpackRequire } from "@vencord/discord-types/webpack";
+import { Module, ModuleExports, WebpackRequire } from "@CometCord/discord-types/webpack";
 
 import { SYM_ORIGINAL_FACTORY, SYM_PATCHED_BY, SYM_PATCHED_SOURCE } from "./patchWebpack";
 

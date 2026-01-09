@@ -1,5 +1,5 @@
 /*
- * Vencord, a modification for Discord's desktop app
+ * CometCord, a modification for Discord's desktop app
  * Copyright (c) 2023 Vendicated and contributors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import * as t from "@vencord/discord-types";
+import * as t from "@CometCord/discord-types";
 import { findByPropsLazy } from "@webpack";
 
 export const ButtonWrapperClasses: t.ButtonWrapperClasses = findByPropsLazy("buttonWrapper", "buttonContent");

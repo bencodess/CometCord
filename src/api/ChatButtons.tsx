@@ -1,5 +1,5 @@
 /*
- * Vencord, a Discord client mod
+ * CometCord, a Discord client mod
  * Copyright (c) 2024 Vendicated and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -10,7 +10,7 @@ import ErrorBoundary from "@components/ErrorBoundary";
 import { Logger } from "@utils/Logger";
 import { classes } from "@utils/misc";
 import { IconComponent } from "@utils/types";
-import { Channel } from "@vencord/discord-types";
+import { Channel } from "@CometCord/discord-types";
 import { waitFor } from "@webpack";
 import { ButtonWrapperClasses, Clickable, Menu, Tooltip } from "@webpack/common";
 import { HTMLProps, JSX, MouseEventHandler, ReactNode } from "react";
@@ -95,7 +95,7 @@ export type ChatBarButtonData = {
 export const ChatBarButtonMap = new Map<string, ChatBarButtonData>();
 const logger = new Logger("ChatButtons");
 
-function VencordChatBarButtons(props: ChatBarProps) {
+function CometCordChatBarButtons(props: ChatBarProps) {
     const { chatBarButtons } = useSettings(["uiElements.chatBarButtons.*"]).uiElements;
 
     const { analyticsName } = props.type;
@@ -115,7 +115,7 @@ function VencordChatBarButtons(props: ChatBarProps) {
 export function _injectButtons(buttons: ReactNode[], props: ChatBarProps) {
     if (props.disabled) return;
 
-    buttons.unshift(<VencordChatBarButtons key="vencord-chat-buttons" {...props} />);
+    buttons.unshift(<CometCordChatBarButtons key="CometCord-chat-buttons" {...props} />);
 
     return buttons;
 }
@@ -174,7 +174,7 @@ addContextMenuPatch("textarea-context", (children, args) => {
     if (idx === -1) return;
 
     group.splice(idx, 0,
-        <Menu.MenuItem id="vc-chat-buttons" key="vencord-chat-buttons" label="Vencord Buttons">
+        <Menu.MenuItem id="vc-chat-buttons" key="CometCord-chat-buttons" label="CometCord Buttons">
             {buttons.map(([id]) => (
                 <Menu.MenuCheckboxItem
                     label={id}

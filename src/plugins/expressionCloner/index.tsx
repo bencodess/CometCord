@@ -1,5 +1,5 @@
 /*
- * Vencord, a modification for Discord's desktop app
+ * CometCord, a modification for Discord's desktop app
  * Copyright (c) 2022 Vendicated and contributors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,8 +25,8 @@ import { Logger } from "@utils/Logger";
 import { Margins } from "@utils/margins";
 import { ModalContent, ModalHeader, ModalRoot, openModalLazy } from "@utils/modal";
 import definePlugin from "@utils/types";
-import { Guild, GuildSticker } from "@vencord/discord-types";
-import { StickerFormatType } from "@vencord/discord-types/enums";
+import { Guild, GuildSticker } from "@CometCord/discord-types";
+import { StickerFormatType } from "@CometCord/discord-types/enums";
 import { findByCodeLazy } from "@webpack";
 import { Constants, EmojiStore, FluxDispatcher, Forms, GuildStore, IconUtils, Menu, PermissionsBits, PermissionStore, React, RestAPI, StickersStore, Toasts, Tooltip, UserStore } from "@webpack/common";
 import { Promisable } from "type-fest";

@@ -38,6 +38,12 @@ importers:
         specifier: ^1.0.1
         version: 1.0.2
     devDependencies:
+      '@CometCord/discord-types':
+        specifier: link:packages/cometcord-discord-types
+        version: link:packages/cometcord-discord-types
+      '@CometCord/types':
+        specifier: link:packages/cometcord-types
+        version: link:packages/cometcord-types
       '@stylistic/eslint-plugin':
         specifier: ^5.6.0
         version: 5.6.0(eslint@9.39.1)
@@ -59,9 +65,6 @@ importers:
       '@types/yazl':
         specifier: ^3.3.0
         version: 3.3.0
-      '@vencord/discord-types':
-        specifier: link:packages/discord-types
-        version: link:packages/discord-types
       diff:
         specifier: ^8.0.2
         version: 8.0.2
@@ -138,7 +141,7 @@ importers:
         specifier: ^0.3.5
         version: 0.3.5
 
-  packages/discord-types:
+  packages/cometcord-discord-types:
     dependencies:
       '@types/react':
         specifier: ^19.0.10
@@ -150,23 +153,23 @@ importers:
         specifier: ^4.41.0
         version: 4.41.0
 
-  packages/vencord-types:
+  packages/cometcord-types:
     dependencies:
+      '@CometCord/discord-types':
+        specifier: link:../cometcord-discord-types
+        version: link:../cometcord-discord-types
       '@types/lodash':
         specifier: 4.17.15
         version: 4.17.15
       '@types/node':
         specifier: ^22.13.4
-        version: 22.13.13
+        version: 22.19.1
       '@types/react':
         specifier: 18.3.1
         version: 18.3.1
       '@types/react-dom':
         specifier: 18.3.1
         version: 18.3.1
-      '@vencord/discord-types':
-        specifier: ^1.0.0
-        version: 1.0.0(@types/react@18.3.1)
       highlight.js:
         specifier: 11.11.1
         version: 11.11.1
@@ -178,7 +181,7 @@ importers:
         version: 5.6.2
       type-fest:
         specifier: ^4.35.0
-        version: 4.38.0
+        version: 4.41.0
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -188,7 +191,7 @@ importers:
         version: 11.3.0
       tsx:
         specifier: ^4.19.2
-        version: 4.19.3
+        version: 4.20.6
 
 packages:
 
@@ -693,9 +696,6 @@ packages:
   '@types/lodash@4.17.20':
     resolution: {integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==}
 
-  '@types/node@22.13.13':
-    resolution: {integrity: sha512-ClsL5nMwKaBRwPcCvH8E7+nU4GxHVx1axNvMZTFHMEfNI7oahimt26P5zjVCRrjiIWj6YFXfE1v3dEp94wLcGQ==}
-
   '@types/node@22.19.1':
     resolution: {integrity: sha512-LCCV0HdSZZZb34qifBsyWlUmok6W7ouER+oQIGBScS8EsZsQbrtFTUrDX4hOl+CS6p7cnNC4td+qrSVGSCTUfQ==}
 
@@ -789,11 +789,6 @@ packages:
 
   '@vap/shiki@0.10.5':
     resolution: {integrity: sha512-5BHVGvQT8qonbLSASon5aQFQ18OZU4FxSl9tLSj6oJ0sap3KdMbYcfGq25M9zFZR1g1dJN7fgjmZXBIS5omIdw==}
-
-  '@vencord/discord-types@1.0.0':
-    resolution: {integrity: sha512-idtijKdbjiqo8k+4mo5Aq9zrQYwr2u11VmiRasaf+8+cGC5bYsMTIZl7zKLF3VdYx2a0ICjxgZtcfa1U3mv1Yg==}
-    peerDependencies:
-      '@types/react': ^19.0.10
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2625,11 +2620,6 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  tsx@4.19.3:
-    resolution: {integrity: sha512-4H8vUNGNjQ4V2EOoGw005+c+dGuPSnhpPBPHBtsZdGZBk/iJb4kguGlPWaZTZ3q5nMtFOEsY0nRDlh9PJyd6SQ==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
-
   tsx@4.20.6:
     resolution: {integrity: sha512-ytQKuwgmrrkDTFP4LjR0ToE2nqgy886GpvRSpU0JAnrdBYppuY5rLkRUYPU1yCryb24SsKBTL/hlDQAEFVwtZg==}
     engines: {node: '>=18.0.0'}
@@ -2638,10 +2628,6 @@ packages:
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
-
-  type-fest@4.38.0:
-    resolution: {integrity: sha512-2dBz5D5ycHIoliLYLi0Q2V7KRaDlH0uWIvmk7TYlAg5slqwiPv1ezJdZm1QEM0xgk29oYWMCbIG7E6gHpvChlg==}
-    engines: {node: '>=16'}
 
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
@@ -2690,9 +2676,6 @@ packages:
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
-
-  undici-types@6.20.0:
-    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
@@ -3161,7 +3144,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.13.13
+      '@types/node': 24.10.1
 
   '@types/har-format@1.2.16': {}
 
@@ -3171,15 +3154,11 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.13.13
+      '@types/node': 24.10.1
 
   '@types/lodash@4.17.15': {}
 
   '@types/lodash@4.17.20': {}
-
-  '@types/node@22.13.13':
-    dependencies:
-      undici-types: 6.20.0
 
   '@types/node@22.19.1':
     dependencies:
@@ -3193,7 +3172,7 @@ snapshots:
 
   '@types/react-dom@18.3.1':
     dependencies:
-      '@types/react': 18.3.1
+      '@types/react': 19.0.12
 
   '@types/react-dom@19.0.4(@types/react@19.0.12)':
     dependencies:
@@ -3319,12 +3298,6 @@ snapshots:
       jsonc-parser: 3.3.1
       vscode-oniguruma: 1.7.0
       vscode-textmate: 5.2.0
-
-  '@vencord/discord-types@1.0.0(@types/react@18.3.1)':
-    dependencies:
-      '@types/react': 18.3.1
-      moment: 2.30.1
-      type-fest: 4.41.0
 
   acorn-jsx@5.3.2(acorn@8.15.0):
     dependencies:
@@ -5511,13 +5484,6 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsx@4.19.3:
-    dependencies:
-      esbuild: 0.25.12
-      get-tsconfig: 4.10.0
-    optionalDependencies:
-      fsevents: 2.3.3
-
   tsx@4.20.6:
     dependencies:
       esbuild: 0.25.12
@@ -5528,8 +5494,6 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
-
-  type-fest@4.38.0: {}
 
   type-fest@4.41.0: {}
 
@@ -5596,8 +5560,6 @@ snapshots:
       has-bigints: 1.1.0
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
-
-  undici-types@6.20.0: {}
 
   undici-types@6.21.0: {}
 

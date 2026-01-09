@@ -1,5 +1,5 @@
 /*
- * Vencord, a modification for Discord's desktop app
+ * CometCord, a modification for Discord's desktop app
  * Copyright (c) 2022 Vendicated and contributors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -45,9 +45,9 @@ declare global {
     export var VERSION: string;
     export var BUILD_TIMESTAMP: number;
 
-    export var VencordNative: typeof import("./VencordNative").default;
-    export var Vencord: typeof import("./Vencord");
-    export var VencordStyles: Map<string, Style>;
+    export var CometCordNative: typeof import("./CometCordNative").default;
+    export var CometCord: typeof import("./CometCord");
+    export var CometCordStyles: Map<string, Style>;
     export var appSettings: {
         set(setting: string, v: any): void;
     };

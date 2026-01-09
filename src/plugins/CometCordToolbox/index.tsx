@@ -1,5 +1,5 @@
 /*
- * Vencord, a modification for Discord's desktop app
+ * CometCord, a modification for Discord's desktop app
  * Copyright (c) 2023 Vendicated and contributors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -49,7 +49,7 @@ function Icon({ isShown }: { isShown: boolean; }) {
     );
 }
 
-function VencordPopoutButton({ buttonClass }: { buttonClass: string; }) {
+function CometCordPopoutButton({ buttonClass }: { buttonClass: string; }) {
     const buttonRef = useRef(null);
     const [show, setShow] = useState(false);
 
@@ -68,7 +68,7 @@ function VencordPopoutButton({ buttonClass }: { buttonClass: string; }) {
                     ref={buttonRef}
                     className={`vc-toolbox-btn ${buttonClass}`}
                     onClick={() => setShow(v => !v)}
-                    tooltip={isShown ? null : "Vencord Toolbox"}
+                    tooltip={isShown ? null : "CometCord Toolbox"}
                     icon={() => <Icon isShown={isShown} />}
                     selected={isShown}
                 />
@@ -78,8 +78,8 @@ function VencordPopoutButton({ buttonClass }: { buttonClass: string; }) {
 }
 
 export default definePlugin({
-    name: "VencordToolbox",
-    description: "Adds a button to the titlebar that houses Vencord quick actions",
+    name: "CometCordToolbox",
+    description: "Adds a button to the titlebar that houses CometCord quick actions",
     authors: [Devs.Ven, Devs.AutumnVN],
 
     settings,
@@ -99,7 +99,7 @@ export default definePlugin({
             <>
                 {children}
                 <ErrorBoundary noop>
-                    <VencordPopoutButton buttonClass={className} />
+                    <CometCordPopoutButton buttonClass={className} />
                 </ErrorBoundary>
             </>
         );

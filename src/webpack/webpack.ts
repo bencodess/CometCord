@@ -1,5 +1,5 @@
 /*
- * Vencord, a modification for Discord's desktop app
+ * CometCord, a modification for Discord's desktop app
  * Copyright (c) 2022 Vendicated and contributors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,8 +20,8 @@ import { makeLazy, proxyLazy } from "@utils/lazy";
 import { LazyComponent } from "@utils/lazyReact";
 import { Logger } from "@utils/Logger";
 import { canonicalizeMatch } from "@utils/patches";
-import type { FluxStore } from "@vencord/discord-types";
-import type { ModuleExports, WebpackRequire } from "@vencord/discord-types/webpack";
+import type { FluxStore } from "@CometCord/discord-types";
+import type { ModuleExports, WebpackRequire } from "@CometCord/discord-types/webpack";
 
 import { traceFunction } from "../debug/Tracer";
 import type { AnyModuleFactory, AnyWebpackRequire } from "./types";
@@ -66,7 +66,7 @@ export const filters = {
             return stringMatches(Function.prototype.toString.call(m), parsedCode);
         };
 
-        filter.$$vencordProps = [...code];
+        filter.$$CometCordProps = [...code];
         return filter;
     },
     byStoreName: (name: StoreNameFilter): FilterFn => m =>
@@ -88,7 +88,7 @@ export const filters = {
             return false;
         };
 
-        filter.$$vencordProps = [...code];
+        filter.$$CometCordProps = [...code];
         return filter;
     }
 };

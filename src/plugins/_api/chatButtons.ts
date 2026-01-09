@@ -1,5 +1,5 @@
 /*
- * Vencord, a Discord client mod
+ * CometCord, a Discord client mod
  * Copyright (c) 2024 Vendicated and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -17,7 +17,7 @@ export default definePlugin({
             find: '"sticker")',
             replacement: {
                 match: /(?<=className:.{0,20}\.buttons.{0,50}children:)(\i)/,
-                replace: "Vencord.Api.ChatButtons._injectButtons($1,arguments[0])"
+                replace: "CometCord.Api.ChatButtons._injectButtons($1,arguments[0])"
             }
         }
     ]

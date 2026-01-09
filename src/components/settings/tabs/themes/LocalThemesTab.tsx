@@ -1,5 +1,5 @@
 /*
- * Vencord, a Discord client mod
+ * CometCord, a Discord client mod
  * Copyright (c) 2025 Vendicated and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -56,7 +56,7 @@ async function onFileUpload(e: SyntheticEvent<HTMLInputElement>) {
         return new Promise<void>((resolve, reject) => {
             const reader = new FileReader();
             reader.onload = () => {
-                VencordNative.themes.uploadTheme(name, reader.result as string)
+                CometCordNative.themes.uploadTheme(name, reader.result as string)
                     .then(resolve)
                     .catch(reject);
             };
@@ -79,7 +79,7 @@ export function LocalThemesTab() {
     }, []);
 
     async function refreshLocalThemes() {
-        const themes = await VencordNative.themes.getThemesList();
+        const themes = await CometCordNative.themes.getThemesList();
         setUserThemes(themes);
     }
 
@@ -128,7 +128,7 @@ export function LocalThemesTab() {
                             ) : (
                                 <QuickAction
                                     text="Open Themes Folder"
-                                    action={() => VencordNative.themes.openFolder()}
+                                    action={() => CometCordNative.themes.openFolder()}
                                     Icon={FolderIcon}
                                 />
                             )}
@@ -139,7 +139,7 @@ export function LocalThemesTab() {
                         />
                         <QuickAction
                             text="Edit QuickCSS"
-                            action={() => VencordNative.quickCss.openEditor()}
+                            action={() => CometCordNative.quickCss.openEditor()}
                             Icon={PaintbrushIcon}
                         />
 
@@ -161,7 +161,7 @@ export function LocalThemesTab() {
                             onChange={enabled => onLocalThemeChange(theme.fileName, enabled)}
                             onDelete={async () => {
                                 onLocalThemeChange(theme.fileName, false);
-                                await VencordNative.themes.deleteTheme(theme.fileName);
+                                await CometCordNative.themes.deleteTheme(theme.fileName);
                                 refreshLocalThemes();
                             }}
                             theme={theme}

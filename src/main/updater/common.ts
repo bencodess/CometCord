@@ -1,5 +1,5 @@
 /*
- * Vencord, a modification for Discord's desktop app
+ * CometCord, a modification for Discord's desktop app
  * Copyright (c) 2022 Vendicated and contributors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,11 +16,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-export const VENCORD_FILES = [
-    IS_DISCORD_DESKTOP ? "patcher.js" : "vencordDesktopMain.js",
-    IS_DISCORD_DESKTOP ? "preload.js" : "vencordDesktopPreload.js",
-    IS_DISCORD_DESKTOP ? "renderer.js" : "vencordDesktopRenderer.js",
-    IS_DISCORD_DESKTOP ? "renderer.css" : "vencordDesktopRenderer.css",
+export const CometCord_FILES = [
+    IS_DISCORD_DESKTOP ? "patcher.js" : "CometCordDesktopMain.js",
+    IS_DISCORD_DESKTOP ? "preload.js" : "CometCordDesktopPreload.js",
+    IS_DISCORD_DESKTOP ? "renderer.js" : "CometCordDesktopRenderer.js",
+    IS_DISCORD_DESKTOP ? "renderer.css" : "CometCordDesktopRenderer.css",
 ];
 
 export function serializeErrors(func: (...args: any[]) => any) {
