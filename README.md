@@ -12,7 +12,7 @@
 - Fork of [Vencord](https://github.com/Vendicated/Vencord)  
 - Modded Discord Desktop Client  
 - Supports plugins, themes, and UI mods  
-- Default theme: Comet-style black & green
+- Default theme: Comet-style black & blue
 
 ---
 
